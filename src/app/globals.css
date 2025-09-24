@@ -43,3 +43,30 @@
 
 
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neon Border Animation */
+@keyframes neon {
+  0%, 100% {
+    border-color: #ff00ff;
+    box-shadow: 0 0 20px #ff00ff;
+  }
+  25% {
+    border-color: #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+  }
+  50% {
+    border-color: #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+  }
+  75% {
+    border-color: #ffff00;
+    box-shadow: 0 0 20px #ffff00;
+  }
+}
+
+.animate-neon {
+  animation: neon 4s linear infinite;
+}
