@@ -7,6 +7,7 @@ import About from "@/components/about";
 import Services from "@/components/Services";
 
 import BlogCard2 from "@/components/projects";
+import Contact from "@/components/contact"
 
 const Homepage = () => {
   const [nav, setNav] = useState(false);
@@ -27,6 +28,7 @@ const Homepage = () => {
         <Services />
 
         <BlogCard2 />
+        <Contact/>
       </div>
     </div>
   );
