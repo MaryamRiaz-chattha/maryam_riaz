@@ -58,12 +58,12 @@
     box-shadow: 0 0 20px #00ffff;
   }
   50% {
-    border-color: #00ff00;
-    box-shadow: 0 0 20px #00ff00;
+    border-color: rgb(255, 0, 106);
+    box-shadow: 0 0 20px #6a00ff;
   }
   75% {
-    border-color: #ffff00;
-    box-shadow: 0 0 20px #ffff00;
+    border-color: #0004ff;
+    box-shadow: 0 0 20px #8c00ff;
   }
 }
 

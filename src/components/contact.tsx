@@ -3,8 +3,8 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center p-6">
-      <div className="w-full max-w-2xl bg-gray-900 p-8 rounded-2xl shadow-xl border-2 border-fuchsia-500 animate-neon">
+    <div className="min-h-screen bg-[#070615f8] text-white flex items-center justify-center p-6">
+      <div className="w-full max-w-2xl bg-[#070615f8] p-8 rounded-2xl shadow-xl border-2 border-fuchsia-500 animate-neon">
         <h1 className="text-4xl font-bold text-center mb-6">
           Contact <span className="text-rose-500">Me</span>
         </h1>

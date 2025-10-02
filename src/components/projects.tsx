@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const BlogCard2 = () => {
   return (
-    <div className="bg-black p-4">
+    <div className="bg-[#070615f8] p-4">
       <p className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
         My <span className="text-rose-900">Projects</span>
       </p>

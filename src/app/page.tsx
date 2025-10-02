@@ -7,7 +7,9 @@ import About from "@/components/about";
 import Services from "@/components/Services";
 
 import BlogCard2 from "@/components/projects";
-import Contact from "@/components/contact"
+import Contact from "@/components/contact";
+import Certificates from "@/components/certificates";
+import Projects from "@/components/projects";
 
 const Homepage = () => {
   const [nav, setNav] = useState(false);
@@ -25,10 +27,15 @@ const Homepage = () => {
         <Hero />
 
         <About />
+
         <Services />
 
         <BlogCard2 />
-        <Contact/>
+        
+
+        <Certificates />
+
+        <Contact />
       </div>
     </div>
   );
