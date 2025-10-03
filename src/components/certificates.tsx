@@ -28,6 +28,36 @@ const Certificates = () => {
       year: "2023",
       link: "https://www.coursera.org/account/accomplishments/certificate/your-html-cert",
     },
+    {
+      title: "Python for Data Science",
+      issuer: "IBM",
+      year: "2023",
+      link: "https://www.coursera.org/account/accomplishments/certificate/your-python-cert",
+    },
+    {
+      title: "Machine Learning",
+      issuer: "Stanford Online",
+      year: "2022",
+      link: "https://www.coursera.org/account/accomplishments/certificate/your-ml-cert",
+    },
+    {
+      title: "Generative AI Basics",
+      issuer: "Google Cloud",
+      year: "2024",
+      link: "https://www.cloudskillsboost.google/public_profiles/your-ai-cert",
+    },
+    {
+      title: "E-commerce Website with HTML & CSS",
+      issuer: "Great Learning Academy",
+      year: "2023",
+      link: "https://www.mygreatlearning.com/certificate/your-ecommerce-cert",
+    },
+    {
+      title: "HTML, CSS & JavaScript",
+      issuer: "Coursera",
+      year: "July 2023",
+      link: "https://www.coursera.org/account/accomplishments/certificate/your-html-css-js-cert",
+    },
   ];
 
   return (
@@ -41,11 +71,14 @@ const Certificates = () => {
           {certificates.map((cert, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: -80 }} // start above
-              whileInView={{ opacity: 1, y: 0 }} // fall into place
+              initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? -100 : 100, // even index = left, odd = right
+              }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{
-                duration: 0.6,
-                delay: index * 0.2, // stagger effect
+                duration: 0.7,
+                delay: index * 0.2,
                 ease: "easeOut",
               }}
               viewport={{ once: true, amount: 0.2 }}

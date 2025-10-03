@@ -3,13 +3,16 @@ import MobileNav from "@/components/MobileNav";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import React, { useState } from "react";
-import About from "@/components/about";
+
 import Services from "@/components/Services";
 
-import BlogCard2 from "@/components/projects";
+import Projects from "@/components/projects";
 import Contact from "@/components/contact";
 import Certificates from "@/components/certificates";
-import Projects from "@/components/projects";
+import Footer from "@/components/footer";
+
+import Education from "@/components/whyme";
+import Skills from "@/components/skills";
 
 const Homepage = () => {
   const [nav, setNav] = useState(false);
@@ -26,16 +29,18 @@ const Homepage = () => {
 
         <Hero />
 
-        <About />
-
+        <Skills />
         <Services />
+        {/*Hero section  *
+        <About />*Hero section  */}
+        <Education />
 
-        <BlogCard2 />
-        
+        <Projects />
 
         <Certificates />
 
         <Contact />
+        <Footer />
       </div>
     </div>
   );

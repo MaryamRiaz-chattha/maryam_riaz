@@ -70,3 +70,15 @@
 .animate-neon {
   animation: neon 4s linear infinite;
 }
+@keyframes slideDown {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 3s linear infinite;
+}

@@ -47,9 +47,9 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="bg-[#121212] pt-[4rem] md:pb-[5rem] overflow-hidden">
+    <div className="bg-[#070615f8] pt-[4rem] md:pb-[5rem] overflow-hidden">
       <p className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
-        My <span className="text-rose-900">Skills</span>
+        My <span className="text-fuchsia-500">Skills</span>
       </p>
       <div className="flex overflow-hidden relative">
         <motion.div
@@ -57,7 +57,7 @@ export default function Services() {
           initial={{ x: "100%" }} // Start from the right
           animate={{ x: "-100%" }} // Move to the left
           transition={{
-            duration: 10, // Adjust speed here
+            duration: 20, // Adjust speed here
             repeat: Infinity,
             ease: "linear",
           }}

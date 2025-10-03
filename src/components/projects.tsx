@@ -1,57 +1,105 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-const BlogCard2 = () => {
+const projects = [
+  {
+    title: "Portfolio Website",
+    category: "Web Development",
+    description:
+      "A modern responsive portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features smooth animations and reusable components.",
+    image:
+      "https://fancytailwind.com/static/9e8be5587c42e1f7ebec77c5a333a3a4/17574/city2.webp",
+    github: "https://github.com/your-username/portfolio",
+    demo: "https://your-portfolio.vercel.app",
+    tech: ["Next.js", "Tailwind", "Framer Motion"],
+  },
+  {
+    title: "AI PDF Reader",
+    category: "AI Project",
+    description:
+      "An AI-powered tool that reads and answers questions from uploaded PDFs using LangChain and Google Generative AI.",
+    image:
+      "https://fancytailwind.com/static/9e8be5587c42e1f7ebec77c5a333a3a4/17574/city2.webp",
+    github: "https://github.com/your-username/ai-pdf-reader",
+    demo: "https://ai-pdf.vercel.app",
+    tech: ["LangChain", "Next.js", "Streamlit"],
+  },
+  {
+    title: "Tic Tac Toe Game",
+    category: "Fun Project",
+    description:
+      "A 3x3 and 4x4 Tic Tac Toe game built with Next.js, TypeScript, and Tailwind CSS. Features auto-reset and animated game states.",
+    image:
+      "https://fancytailwind.com/static/9e8be5587c42e1f7ebec77c5a333a3a4/17574/city2.webp",
+    github: "https://github.com/your-username/tic-tac-toe",
+    demo: "https://tic-tac-toe.vercel.app",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+  },
+];
+
+const Projects = () => {
   return (
-    <div className="bg-[#070615f8] p-4">
+    <div className="bg-[#070615f8] p-8">
       <p className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
-        My <span className="text-rose-900">Projects</span>
+        My <span className="text-fuchsia-500">Projects</span>
       </p>
 
       {/* Grid container */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-        {[1, 2, 3].map((i) => (
-          <div
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
+        {projects.map((project, i) => (
+          <motion.div
             key={i}
-            className="group relative h-full rounded-lg bg-gray-800 overflow-hidden shadow-lg border-2 border-fuchsia-500 animate-neon"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
+            viewport={{ once: true }}
+            className="group relative h-full rounded-xl bg-[#111827]/60 backdrop-blur-md overflow-hidden shadow-lg border border-fuchsia-500 hover:shadow-[0_0_25px_#d946ef] transition"
           >
             {/* Image */}
             <img
-              className="lg:h-48 md:h-36 w-full object-cover object-center transition duration-500 ease-in-out transform group-hover:scale-105"
-              src="https://fancytailwind.com/static/9e8be5587c42e1f7ebec77c5a333a3a4/17574/city2.webp"
-              alt="blog"
+              className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+              src={project.image}
+              alt={project.title}
             />
 
             {/* Category */}
-            <h2 className="pt-4 pb-1 px-4 inline-block title-font text-xs font-semibold text-red-300 uppercase tracking-widest">
-              My Category
+            <h2 className="pt-3 px-4 text-xs font-semibold text-red-300 uppercase tracking-widest">
+              {project.category}
             </h2>
 
             {/* Title & Description */}
-            <div className="py-1 px-6">
-              <Link
-                href={`/project${i}`}
-                className="mb-3 inline-block title-font text-xl font-extrabold text-gray-100 tracking-wide"
-              >
-                Fancy Blog Card {i}
-              </Link>
-              <p className="line-clamp-6 mb-3 leading-relaxed text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
-                illum cum autem incidunt magni voluptatum alias reiciendis
-                possimus doloremque.
+            <div className="py-2 px-6">
+              <h3 className="mb-2 text-xl font-extrabold text-gray-100 tracking-wide">
+                {project.title}
+              </h3>
+              <p className="line-clamp-4 mb-3 text-gray-300">
+                {project.description}
               </p>
+
+              {/* Tech Tags */}
+              <div className="flex flex-wrap gap-2 mb-3">
+                {project.tech.map((t, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-fuchsia-900/40 text-fuchsia-300 text-xs px-3 py-1 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {/* Links */}
-            <div className="pt-1 pb-4 px-2 flex justify-between items-center flex-wrap">
-              <div className="mt-1 flex space-x-4">
+            <div className="pb-4 px-6 flex justify-between items-center">
+              <div className="flex space-x-4">
                 {/* GitHub */}
                 <Link
-                  href="https://github.com/your-username/your-repo"
+                  href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
+                  className="text-gray-400 hover:text-white transition hover:scale-110"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -65,10 +113,10 @@ const BlogCard2 = () => {
 
                 {/* Vercel */}
                 <Link
-                  href="https://your-vercel-demo-link.vercel.app"
+                  href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
+                  className="text-gray-400 hover:text-white transition hover:scale-110"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -81,11 +129,11 @@ const BlogCard2 = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
   );
 };
 
-export default BlogCard2;
+export default Projects;

@@ -1,0 +1,171 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { GraduationCap, Code, Bot, Goal } from "lucide-react";
+
+const education = [
+  {
+    id: 1,
+    title: "Vision for Tomorrow",
+    description:
+      "Aiming for a software engineering role in a leading company, building intelligent systems that shape the future.",
+    icon: Goal,
+    year: "2026",
+  },
+  {
+    id: 2,
+    title: "Exploring AI Frontiers",
+    description:
+      "Diving into Agentic AI and multi-agent systems, working on turning complex ideas into impactful solutions.",
+    icon: Code,
+    year: "2024",
+  },
+
+  {
+    id: 3,
+    title: "Master of Computer Science (MCS)",
+    description: "Virtual University of Pakistan",
+    icon: GraduationCap,
+    year: "2023",
+  },
+];
+
+export default function EducationSection() {
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const stepId = Number(entry.target.getAttribute("data-step"));
+            setVisibleSteps((prev) => [...new Set([...prev, stepId])]);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const steps = document.querySelectorAll("[data-step]");
+    steps.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      id="education"
+      className="py-16 px-4 sm:px-6 lg:px-8  bg-[#070615f8] overflow-hidden"
+    >
+      {/* Background Glows */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-[600px] h-[600px] bg-gradient-radial from-[#8B5CF6]/30 via-[#EC4899]/15 to-transparent rounded-full blur-[100px] animate-pulse-slow"></div>
+        <div
+          className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-radial from-[#06B6D4]/25 via-[#8B5CF6]/15 to-transparent rounded-full blur-[80px] animate-pulse-slow"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-radial from-[#EC4899]/20 via-[#06B6D4]/10 to-transparent rounded-full blur-[60px] animate-pulse-slow"
+          style={{ animationDelay: "2s" }}
+        ></div>
+      </div>
+
+      {/* Header */}
+      <div className="max-w-5xl mx-auto relative z-10 text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          My{" "}
+          <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] bg-clip-text text-transparent">
+            Journey
+          </span>
+        </h2>
+      </div>
+
+      {/* Mobile Timeline */}
+      <div className="lg:hidden space-y-6">
+        {education.map((step, index) => {
+          const Icon = step.icon;
+          const visible = visibleSteps.includes(step.id);
+          return (
+            <div
+              key={step.id}
+              data-step={step.id}
+              className={`${
+                visible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              } transition-all duration-700 ease-out`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              <div className="bg-black/30 backdrop-blur-md border border-[#8B5CF6]/30 rounded-lg p-5 hover:bg-black/50 hover:border-[#EC4899]/50 hover:shadow-xl hover:shadow-[#EC4899]/30 transition-all duration-300 flex items-start space-x-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] p-2 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50">
+                  <Icon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <h3 className="text-white font-semibold">{step.title}</h3>
+                    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] px-2 py-1 rounded-full">
+                      {step.year}
+                    </span>
+                  </div>
+                  <p className="text-white/70 text-sm">{step.description}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Desktop Timeline */}
+      <div className="hidden lg:block relative max-w-6xl mx-auto">
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#06B6D4] h-full rounded-full shadow-lg shadow-[#06B6D4]/50"></div>
+        <div className="space-y-16">
+          {education.map((step, index) => {
+            const Icon = step.icon;
+            const visible = visibleSteps.includes(step.id);
+            const left = index % 2 === 0;
+            return (
+              <div
+                key={step.id}
+                data-step={step.id}
+                className={`relative flex items-center ${
+                  left ? "justify-start" : "justify-end"
+                } ${
+                  visible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                } transition-all duration-700 ease-out`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                <div
+                  className={`w-full sm:w-5/12 px-4 ${
+                    left ? "sm:pr-8" : "sm:pl-8"
+                  }`}
+                >
+                  <div className="bg-black/20 backdrop-blur-md border border-[#8B5CF6]/30 rounded-lg p-6 hover:bg-black/40 hover:border-[#EC4899]/50 hover:shadow-xl hover:shadow-[#EC4899]/30 transition-all duration-300">
+                    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] px-2 py-1 rounded-full mb-2 inline-block">
+                      {step.year}
+                    </span>
+                    <h3 className="text-white font-semibold text-lg mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="relative group">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] p-2 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50 group-hover:shadow-[#EC4899]/70 transition-all duration-300">
+                      <Icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] opacity-0 group-hover:opacity-40 group-hover:animate-ping transition-opacity duration-300"></div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
