@@ -20,8 +20,9 @@ const projects = [
     description:
       "An elegant and fully responsive e-commerce platform with animations, category filters, and smooth UI built using Next.js, TypeScript, and Tailwind CSS.",
     image: "/images/ec.jpg",
-    github: "https://github.com/MaryamRiaz-chattha/ecommerce-site",
-    demo: "https://ecommerce-demo.vercel.app/",
+    github:
+      "https://github.com/MaryamRiaz-chattha/v0-luxury-e-commerce-website",
+    demo: "https://v0-luxury-e-commerce-website-rouge.vercel.app/",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
@@ -35,13 +36,13 @@ const projects = [
     tech: ["Python", "FastAPI", "Generative AI"],
   },
   {
-    title: "Tic Tac Toe Game",
-    category: "Fun Project",
+    title: "E-Commerce Website",
+    category: "Full Stack Project",
     description:
-      "A 3x3 and 4x4 Tic Tac Toe game built with Next.js, TypeScript, and Tailwind CSS. Features animations, auto-reset, and a modern minimalist interface.",
-    image: "/images/tic.jpg",
-    github: "https://github.com/MaryamRiaz-chattha/tic-tac-toe",
-    demo: "https://tic-tac-toe.vercel.app",
+      "An elegant and fully responsive e-commerce platform with animations, category filters, and smooth UI built using Next.js, TypeScript, and Tailwind CSS.",
+    image: "/images/ec.jpg",
+    github: "https://github.com/MaryamRiaz-chattha/v0-luxury-e-commerce-website",
+    demo: "https://v0-luxury-e-commerce-website-rouge.vercel.app/",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
