@@ -39,7 +39,7 @@ export default function EducationSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const stepId = Number(entry.target.getAttribute("data-step"));
-            setVisibleSteps((prev) => [...new Set([...prev, stepId])]);
+            setVisibleSteps((prev) => Array.from(new Set([...prev, stepId])));
           }
         });
       },

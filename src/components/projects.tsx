@@ -19,7 +19,7 @@ const projects = [
     category: "Full Stack Project",
     description:
       "An elegant and fully responsive e-commerce platform with animations, category filters, and smooth UI built using Next.js, TypeScript, and Tailwind CSS.",
-    image: "/images/ecommerce.png",
+    image: "/images/ec.jpg",
     github: "https://github.com/MaryamRiaz-chattha/ecommerce-site",
     demo: "https://ecommerce-demo.vercel.app/",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
@@ -29,7 +29,7 @@ const projects = [
     category: "AI Backend Project",
     description:
       "An AI-powered backend project that converts videos into speech using advanced machine learning models — designed without a frontend interface.",
-    image: "/images/ai-voice.png",
+    image: "/images/langchain.png",
     github: "https://github.com/MaryamRiaz-chattha/ai-video-voice-generator",
     demo: "#",
     tech: ["Python", "FastAPI", "Generative AI"],
@@ -39,7 +39,7 @@ const projects = [
     category: "Fun Project",
     description:
       "A 3x3 and 4x4 Tic Tac Toe game built with Next.js, TypeScript, and Tailwind CSS. Features animations, auto-reset, and a modern minimalist interface.",
-    image: "/images/tictactoe.png",
+    image: "/images/tic.jpg",
     github: "https://github.com/MaryamRiaz-chattha/tic-tac-toe",
     demo: "https://tic-tac-toe.vercel.app",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -49,7 +49,7 @@ const projects = [
     category: "Frontend Project",
     description:
       "A responsive Netflix clone designed with HTML and CSS to replicate the real platform’s layout and UI elements.",
-    image: "/images/netflix.png",
+    image: "/images/netflix.jpg",
     github: "https://github.com/MaryamRiaz-chattha/netflix-clone",
     demo: "https://maryam-netflix-clone.vercel.app/",
     tech: ["HTML", "CSS"],
@@ -59,7 +59,7 @@ const projects = [
     category: "Backend Project",
     description:
       "A secure voting system built using PHP, MySQL, and Bootstrap that allows users to vote and view results in real-time.",
-    image: "/images/voting.png",
+    image: "/images/vote.png",
     github: "https://github.com/MaryamRiaz-chattha/web-voting-system",
     demo: "#",
     tech: ["PHP", "MySQL", "Bootstrap"],
