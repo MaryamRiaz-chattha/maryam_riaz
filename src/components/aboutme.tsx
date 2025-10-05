@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Users, Cpu, Rocket } from "lucide-react"; // ✅ Updated icons
 
-const WhyMe = [
+const AboutMe = [
   {
     id: 1,
     title: "Collaborative & Innovative Thinker",
@@ -78,7 +78,7 @@ export default function Skills() {
 
       {/* Why Me Cards */}
       <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-3 gap-8">
-        {WhyMe.map((skill, index) => {
+        {AboutMe.map((skill, index) => {
           const Icon = skill.icon;
           const isVisible = visible.includes(skill.id);
           return (

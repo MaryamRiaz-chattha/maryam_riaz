@@ -12,7 +12,7 @@ import Certificates from "@/components/certificates";
 import Footer from "@/components/footer";
 
 import Education from "@/components/MyJourney";
-import WhyMe from "@/components/WhyMe";
+import AboutMe from "@/components/aboutme";
 
 const Homepage = () => {
   const [nav, setNav] = useState(false);
@@ -29,7 +29,7 @@ const Homepage = () => {
 
         <Hero />
 
-        <WhyMe />
+        <AboutMe />
         <Skills />
 
         {/*Hero section  *
