@@ -4,15 +4,15 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import React, { useState } from "react";
 
-import Services from "@/components/Services";
+import Skills from "@/components/Services";
 
 import Projects from "@/components/projects";
 import Contact from "@/components/contact";
 import Certificates from "@/components/certificates";
 import Footer from "@/components/footer";
 
-import Education from "@/components/whyme";
-import Skills from "@/components/skills";
+import Education from "@/components/MyJourney";
+import WhyMe from "@/components/WhyMe";
 
 const Homepage = () => {
   const [nav, setNav] = useState(false);
@@ -29,8 +29,9 @@ const Homepage = () => {
 
         <Hero />
 
+        <WhyMe />
         <Skills />
-        <Services />
+
         {/*Hero section  *
         <About />*Hero section  */}
         <Education />

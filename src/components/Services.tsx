@@ -1,98 +1,89 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+"use client";
+import React from "react";
 import { motion } from "framer-motion";
+import {
+  Code2,
+  Brain,
+  Workflow,
+  Cpu,
+  PenTool,
+  Globe,
+  Zap,
+  Layers,
+  Sparkles,
+  Rocket,
+} from "lucide-react";
 
-// Define the Skill interface
-interface Skill {
-  name: string;
-  imgSrc: string;
-}
-
-// Skill data
-const skills: Skill[] = [
-  { name: "HTML", imgSrc: "/images/html.png" },
-  { name: "CSS", imgSrc: "/images/css.png" },
-  { name: "JavaScript", imgSrc: "/images/ts.png" },
-  { name: "Next.js", imgSrc: "/images/nextjs-icon.svg" },
-  { name: "Redux", imgSrc: "/images/redux.png" },
-  { name: "Tailwind CSS", imgSrc: "/images/tailwind.png" },
-  { name: "Docker", imgSrc: "/images/docker.webp" },
-  { name: "FastAPI", imgSrc: "/images/fastapi.png" },
-  { name: "Figma", imgSrc: "/images/figma.png" },
-  { name: "Git", imgSrc: "/images/git.png" },
-  { name: "Bootstrap", imgSrc: "/images/bootstrap.png" },
-  { name: "MySQL", imgSrc: "/images/mysql.png" },
+const skills = [
+  { name: "Python", icon: <Cpu className="text-yellow-400 w-8 h-8" /> },
+  { name: "TypeScript", icon: <Code2 className="text-blue-400 w-8 h-8" /> },
+  { name: "JavaScript", icon: <Zap className="text-yellow-500 w-8 h-8" /> },
+  { name: "Next.js", icon: <Globe className="text-gray-300 w-8 h-8" /> },
+  {
+    name: "Tailwind CSS",
+    icon: <Workflow className="text-cyan-400 w-8 h-8" />,
+  },
+  { name: "Figma", icon: <PenTool className="text-pink-400 w-8 h-8" /> },
+  { name: "C++", icon: <Cpu className="text-blue-500 w-8 h-8" /> },
+  { name: "AI / LLM", icon: <Brain className="text-purple-400 w-8 h-8" /> },
+  { name: "Agentic AI", icon: <Brain className="text-fuchsia-400 w-8 h-8" /> },
+  {
+    name: "Prompt Engineering",
+    icon: <Sparkles className="text-pink-400 w-8 h-8" />,
+  },
+  {
+    name: "Context Engineering",
+    icon: <Layers className="text-green-400 w-8 h-8" />,
+  },
+  { name: "FastAPI", icon: <Rocket className="text-teal-400 w-8 h-8" /> },
+  { name: "ShadCN UI", icon: <Code2 className="text-violet-400 w-8 h-8" /> },
+  {
+    name: "n8n Automation",
+    icon: <Workflow className="text-green-400 w-8 h-8" />,
+  },
 ];
 
-export default function Services() {
-  const [visibleSkills, setVisibleSkills] = useState<number[]>([]); // Type for visibleSkills
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const skillsElements = document.querySelectorAll<HTMLElement>(".skill");
-      skillsElements.forEach((element, index) => {
-        const rect = element.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          setVisibleSkills((prev) => [...prev, index]);
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check on mount
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+const Skills = () => {
   return (
-    <div className="bg-[#070615f8] pt-[4rem] md:pb-[5rem] overflow-hidden">
-      <p className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
-        My <span className="text-fuchsia-500">Skills</span>
-      </p>
-      <div className="flex overflow-hidden relative">
-        <motion.div
-          className="flex gap-8 animate-marquee"
-          initial={{ x: "100%" }} // Start from the right
-          animate={{ x: "-100%" }} // Move to the left
-          transition={{
-            duration: 20, // Adjust speed here
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        >
-          {skills.map((skill, index) => (
+    <div className="bg-[#070615f8] py-14 px-6">
+      <h2 className="text-center text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase text-white mb-12">
+        Advanced{" "}
+        <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+          Skills
+        </span>
+      </h2>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center">
+        {skills.map((skill, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0.8, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="group relative flex flex-col items-center justify-center bg-[#0f172a]/60 backdrop-blur-md border border-[#8B5CF6]/60 rounded-2xl p-6 w-[150px] h-[150px] text-center text-white shadow-lg hover:shadow-[0_0_25px_#d946ef] hover:border-[#d946ef] transition-all duration-300"
+          >
+            <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
+              {skill.icon}
+            </div>
+            <h3 className="text-sm sm:text-base font-semibold tracking-wide">
+              {skill.name}
+            </h3>
+
+            {/* Neon moving border animation */}
             <motion.div
-              key={index}
-              className="flex flex-col items-center skill"
-              initial={{ opacity: 0, scale: 0.8 }} // Initial state with scale
-              animate={
-                visibleSkills.includes(index)
-                  ? {
-                      opacity: 1,
-                      scale: 1,
-                      transition: { duration: 0.5 }, // Transition for the entrance
-                    }
-                  : {}
-              }
-              onClick={() => console.log(`Clicked on ${skill.name}`)} // Handle click event
-              whileTap={{ scale: 0.9 }} // Scale down on click
-              whileHover={{ scale: 1.1 }} // Scale up on hover
-            >
-              <Image
-                src={skill.imgSrc}
-                alt={skill.name}
-                width={80}
-                height={80}
-              />
-              <p className="mt-4 text-lg font-semibold text-white">
-                {skill.name}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+              className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#d946ef] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              animate={{
+                opacity: [0, 1, 0.5, 1],
+                borderColor: ["#8B5CF6", "#EC4899", "#9606d4ee", "#d946ef"],
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+          </motion.div>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default Skills;

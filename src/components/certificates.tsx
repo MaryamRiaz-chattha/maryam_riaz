@@ -64,7 +64,10 @@ const Certificates = () => {
     <section id="certificates" className="bg-[#070615f8] text-white py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase">
-          My <span className="text-fuchsia-500">Certificates</span>
+          My{" "}
+          <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+            Certificates
+          </span>
         </h2>
 
         <div className="grid sm:grid-cols-2 gap-6">

@@ -42,7 +42,9 @@ export default function Footer() {
 
         {/* Socials */}
         <div className="flex flex-col md:items-end">
-          <h3 className="text-white font-semibold mb-3">Connect</h3>
+          <h3 className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] px-2 py-1 rounded-full mb-2 inline-block">
+            Connect
+          </h3>
           <div className="flex space-x-5">
             <Link
               href="mailto:yourmail@gmail.com"

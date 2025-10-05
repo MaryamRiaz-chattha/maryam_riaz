@@ -32,18 +32,15 @@ const Hero = () => {
             <TextEffect />
           </div>
 
-          {/* Description */}
-          <p className="mt-4 text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-teal-100 max-w-[600px] mx-auto lg:mx-0 leading-relaxed">
-            Welcome to the digital world of{" "}
-            <span className="text-fuchsia-400 font-semibold">Maryam Riaz</span>{" "}
-            – where <span className="text-fuchsia-500">web development</span>{" "}
-            meets <span className="text-fuchsia-500">continuous learning</span>.
-            I’m an aspiring developer with skills in{" "}
-            <span className="text-fuchsia-400">
-              Next.js, TypeScript, and Tailwind CSS
-            </span>
-            , exploring the exciting potential of{" "}
-            <span className="text-fuchsia-400">AI-driven applications</span>.
+          {/* Description (Simplified White Text) */}
+          <p className="mt-4 text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-white max-w-[600px] mx-auto lg:mx-0 leading-relaxed">
+            Welcome to my portfolio! I’m{" "}
+            <span className="font-semibold">Maryam Riaz</span>, a passionate
+            learner and web developer skilled in{" "}
+            <span className="font-semibold">Next.js, TypeScript,</span> and{" "}
+            <span className="font-semibold">Tailwind CSS</span>. I love creating
+            beautiful and interactive websites while exploring the world of{" "}
+            <span className="font-semibold">AI-driven applications</span>.
           </p>
 
           {/* Buttons */}

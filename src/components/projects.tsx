@@ -5,37 +5,64 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Portfolio Website",
-    category: "Web Development",
+    title: "AI Learning Assistant",
+    category: "AI Frontend Project",
     description:
-      "A modern responsive portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features smooth animations and reusable components.",
-    image:
-      "https://fancytailwind.com/static/9e8be5587c42e1f7ebec77c5a333a3a4/17574/city2.webp",
-    github: "https://github.com/your-username/portfolio",
-    demo: "https://your-portfolio.vercel.app",
-    tech: ["Next.js", "Tailwind", "Framer Motion"],
+      "A modern AI Learning Assistant built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. It provides an interactive and visually rich learning experience.",
+    image: "/images/ai.jpg",
+    github: "https://github.com/MaryamRiaz-chattha/learning-assistant-ai",
+    demo: "https://3d-learning-assistant.vercel.app/",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
-    title: "AI PDF Reader",
-    category: "AI Project",
+    title: "E-Commerce Website",
+    category: "Full Stack Project",
     description:
-      "An AI-powered tool that reads and answers questions from uploaded PDFs using LangChain and Google Generative AI.",
-    image:
-      "https://fancytailwind.com/static/9e8be5587c42e1f7ebec77c5a333a3a4/17574/city2.webp",
-    github: "https://github.com/your-username/ai-pdf-reader",
-    demo: "https://ai-pdf.vercel.app",
-    tech: ["LangChain", "Next.js", "Streamlit"],
+      "An elegant and fully responsive e-commerce platform with animations, category filters, and smooth UI built using Next.js, TypeScript, and Tailwind CSS.",
+    image: "/images/ecommerce.png",
+    github: "https://github.com/MaryamRiaz-chattha/ecommerce-site",
+    demo: "https://ecommerce-demo.vercel.app/",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    title: "AI Video to Voice Generator",
+    category: "AI Backend Project",
+    description:
+      "An AI-powered backend project that converts videos into speech using advanced machine learning models — designed without a frontend interface.",
+    image: "/images/ai-voice.png",
+    github: "https://github.com/MaryamRiaz-chattha/ai-video-voice-generator",
+    demo: "#",
+    tech: ["Python", "FastAPI", "Generative AI"],
   },
   {
     title: "Tic Tac Toe Game",
     category: "Fun Project",
     description:
-      "A 3x3 and 4x4 Tic Tac Toe game built with Next.js, TypeScript, and Tailwind CSS. Features auto-reset and animated game states.",
-    image:
-      "https://fancytailwind.com/static/9e8be5587c42e1f7ebec77c5a333a3a4/17574/city2.webp",
-    github: "https://github.com/your-username/tic-tac-toe",
+      "A 3x3 and 4x4 Tic Tac Toe game built with Next.js, TypeScript, and Tailwind CSS. Features animations, auto-reset, and a modern minimalist interface.",
+    image: "/images/tictactoe.png",
+    github: "https://github.com/MaryamRiaz-chattha/tic-tac-toe",
     demo: "https://tic-tac-toe.vercel.app",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "Netflix Clone",
+    category: "Frontend Project",
+    description:
+      "A responsive Netflix clone designed with HTML and CSS to replicate the real platform’s layout and UI elements.",
+    image: "/images/netflix.png",
+    github: "https://github.com/MaryamRiaz-chattha/netflix-clone",
+    demo: "https://maryam-netflix-clone.vercel.app/",
+    tech: ["HTML", "CSS"],
+  },
+  {
+    title: "Web-Based Voting System",
+    category: "Backend Project",
+    description:
+      "A secure voting system built using PHP, MySQL, and Bootstrap that allows users to vote and view results in real-time.",
+    image: "/images/voting.png",
+    github: "https://github.com/MaryamRiaz-chattha/web-voting-system",
+    demo: "#",
+    tech: ["PHP", "MySQL", "Bootstrap"],
   },
 ];
 
@@ -43,7 +70,10 @@ const Projects = () => {
   return (
     <div className="bg-[#070615f8] p-8">
       <p className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
-        My <span className="text-fuchsia-500">Projects</span>
+        My{" "}
+        <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+          Projects
+        </span>
       </p>
 
       {/* Grid container */}
@@ -111,22 +141,24 @@ const Projects = () => {
                   </svg>
                 </Link>
 
-                {/* Vercel */}
-                <Link
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition hover:scale-110"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
+                {/* Vercel / Demo */}
+                {project.demo !== "#" && (
+                  <Link
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition hover:scale-110"
                   >
-                    <path d="M12 2L1 21h22L12 2z" />
-                  </svg>
-                </Link>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2L1 21h22L12 2z" />
+                    </svg>
+                  </Link>
+                )}
               </div>
             </div>
           </motion.div>
