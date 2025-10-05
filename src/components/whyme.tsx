@@ -36,7 +36,7 @@ export default function Skills() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = Number(entry.target.getAttribute("data-id"));
-            setVisible((prev) => [...new Set([...prev, id])]);
+            setVisible((prev) => Array.from(new Set([...prev, id])));
           }
         });
       },
