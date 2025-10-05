@@ -41,7 +41,8 @@ const projects = [
     description:
       "An elegant and fully responsive e-commerce platform with animations, category filters, and smooth UI built using Next.js, TypeScript, and Tailwind CSS.",
     image: "/images/ec.jpg",
-    github: "https://github.com/MaryamRiaz-chattha/v0-luxury-e-commerce-website",
+    github:
+      "https://github.com/MaryamRiaz-chattha/v0-luxury-e-commerce-website",
     demo: "https://v0-luxury-e-commerce-website-rouge.vercel.app/",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
   },

@@ -88,7 +88,7 @@ const cardVariants = {
 
 const Skills = () => {
   return (
-    <section className=" bg-[#070615] py-28 px-6 overflow-hidden">
+    <section className=" bg-[#070615f8] py-28 px-6 overflow-hidden">
       {/* Animated Gradient Orbs */}
       <motion.div
         className="absolute top-10 left-1/4 w-72 h-72 bg-gradient-to-br from-[#8B5CF6]/40 to-[#EC4899]/30 blur-[120px] rounded-full opacity-70"
@@ -113,7 +113,6 @@ const Skills = () => {
             Expertise
           </span>
         </motion.h2>
-      
 
         <motion.div
           variants={containerVariants}

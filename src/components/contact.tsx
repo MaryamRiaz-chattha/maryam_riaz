@@ -7,7 +7,7 @@ const Contact = () => {
       <div className="w-full max-w-2xl bg-[#070615f8] p-8 rounded-2xl shadow-xl border-2 border-fuchsia-500 animate-neon">
         <h1 className="text-4xl font-bold text-center mb-6">
           Contact{" "}
-          <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#9468fb] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
             Me
           </span>
         </h1>

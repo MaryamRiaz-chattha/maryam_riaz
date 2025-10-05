@@ -51,7 +51,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden relative"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden "
     >
       {/* Background Glows */}
       <div className="absolute inset-0 opacity-20">
@@ -68,7 +68,7 @@ export default function Skills() {
             Me
           </span>
         </h2>
-        <p className="text-white/70 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+        <p className="text-white max-w-2xl mx-auto  sm:text-[18px] leading-relaxed">
           I believe in meaningful creation — combining technology, teamwork, and
           innovation to build solutions that inspire and perform. My mindset
           focuses on collaboration, creativity, and continuous improvement in
