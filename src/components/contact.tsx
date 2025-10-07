@@ -10,9 +10,12 @@ const Contact = () => {
     >
       {/* Heading outside the card */}
       <h1 className="text-5xl font-bold mb-8 text-center">
-        <span className="bg-gradient-to-r from-[#9468fb] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
-          CONTACT ME
-        </span>
+        <p className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
+          CONTACT{" "}
+          <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+            ME{" "}
+          </span>
+        </p>
       </h1>
 
       {/* Main Container / Card */}

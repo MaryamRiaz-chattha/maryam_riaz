@@ -49,9 +49,12 @@ const Certificates = () => {
     },
   ];
 
- return (
+  return (
     // ✅ Section with ID for navbar smooth scroll
-    <section id="certificates" className="bg-[#070615f8] text-white py-16 px-6 scroll-mt-20">
+    <section
+      id="certificates"
+      className="bg-[#070615f8] text-white py-16 px-6 scroll-mt-20"
+    >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase">
           My{" "}
