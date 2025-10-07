@@ -63,9 +63,9 @@ export default function About() {
       {/* Section Header */}
       <div className="max-w-5xl mx-auto relative z-10 text-center mb-10">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Why{" "}
+          WHY{" "}
           <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9a06d4] bg-clip-text text-transparent">
-            Me
+            ME
           </span>
         </h2>
         <p className="text-white max-w-2xl mx-auto sm:text-[18px] leading-relaxed">

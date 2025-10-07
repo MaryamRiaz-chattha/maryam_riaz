@@ -11,7 +11,7 @@ const Contact = () => {
       {/* Heading outside the card */}
       <h1 className="text-5xl font-bold mb-8 text-center">
         <span className="bg-gradient-to-r from-[#9468fb] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
-          Contact Me
+          CONTACT ME
         </span>
       </h1>
 
