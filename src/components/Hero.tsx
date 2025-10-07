@@ -54,11 +54,7 @@ const Hero = () => {
                 Download CV
               </button>
             </Link>
-            <Link href="#contact">
-              <button className="border border-fuchsia-500 text-fuchsia-400 font-semibold py-3 px-6 rounded-lg hover:bg-fuchsia-500 hover:text-black transition">
-                Let’s Connect
-              </button>
-            </Link>
+            
           </div>
         </motion.div>
 

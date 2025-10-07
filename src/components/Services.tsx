@@ -67,6 +67,7 @@ const skills = [
   { name: "Automation", icon: <Settings className="text-lime-400 w-8 h-8" /> },
 ];
 
+// Framer Motion Variants
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -74,7 +75,6 @@ const containerVariants = {
     transition: { staggerChildren: 0.08, delayChildren: 0.3 },
   },
 };
-
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.8, y: 40, rotateX: 15 },
   show: {
@@ -90,20 +90,8 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className=" bg-[#070615f8] py-28 px-6 overflow-hidden scroll-mt-24"
+      className="bg-[#070615f8] py-28 px-6 overflow-hidden scroll-mt-24 "
     >
-      {/* Animated Gradient Orbs */}
-      <motion.div
-        className="absolute top-10 left-1/4 w-72 h-72 bg-gradient-to-br from-[#8B5CF6]/40 to-[#EC4899]/30 blur-[120px] rounded-full opacity-70"
-        animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-20 right-1/4 w-72 h-72 bg-gradient-to-br from-[#06b6d4]/30 to-[#f0abfc]/40 blur-[120px] rounded-full opacity-60"
-        animate={{ x: [0, -30, 0], y: [0, -20, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      />
-
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -122,7 +110,7 @@ const Skills = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 place-items-center"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 place-items-center relative"
         >
           {skills.map((skill, index) => (
             <motion.div
@@ -135,44 +123,43 @@ const Skills = () => {
                 boxShadow: "0 0 30px rgba(236,72,153,0.6)",
               }}
               whileTap={{ scale: 0.96 }}
-              className="relative group bg-gradient-to-br from-[#0f172a]/70 to-[#1e293b]/60 backdrop-blur-2xl border border-[#8B5CF6]/40 rounded-2xl p-6 w-[160px] h-[160px] flex flex-col items-center justify-center text-white shadow-[0_0_20px_#8B5CF6]/30 transition-all duration-500"
+              className="relative w-[160px] h-[160px] flex flex-col items-center justify-center text-white rounded-2xl shadow-lg transition-all duration-500"
             >
-              {/* Shimmer reflection */}
-              <div className="absolute top-0 left-0 w-full h-full rounded-2xl bg-gradient-to-b from-white/10 to-transparent opacity-0 group-hover:opacity-10 transition duration-700"></div>
-
-              {/* Neon hover glow */}
-              <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#06b6d4] opacity-0 group-hover:opacity-100 blur-lg transition duration-700"></div>
-
-              {/* Floating icon */}
+              {/* Magic Bento Background */}
               <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{
-                  duration: 2 + Math.random(),
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="relative z-10 mb-3 group-hover:scale-110 transition-transform duration-300"
-              >
-                {skill.icon}
-              </motion.div>
-
-              <h3 className="relative z-10 text-sm sm:text-base font-semibold tracking-wide text-gray-200 group-hover:text-white transition-colors duration-300">
-                {skill.name}
-              </h3>
-
-              {/* Glowing border pulse */}
-              <motion.div
-                className="absolute inset-0 rounded-2xl border-2 border-transparent opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 rounded-2xl"
                 animate={{
-                  opacity: [0.6, 1, 0.6],
-                  borderColor: ["#8B5CF6", "#EC4899", "#06b6d4", "#8B5CF6"],
+                  background: [
+                    "linear-gradient(135deg, rgba(236,72,153,0.3), rgba(139,92,246,0.3))",
+                    "linear-gradient(135deg, rgba(6,182,212,0.3), rgba(236,72,153,0.3))",
+                    "linear-gradient(135deg, rgba(139,92,246,0.3), rgba(6,182,212,0.3))",
+                  ],
                 }}
                 transition={{
-                  duration: 4,
+                  duration: 5,
                   repeat: Infinity,
+                  repeatType: "reverse",
                   ease: "easeInOut",
                 }}
               />
+
+              {/* Card Foreground */}
+              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-6 bg-[#0f172a]/70 backdrop-blur-2xl border border-[#8B5CF6]/40 rounded-2xl">
+                <motion.div
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{
+                    duration: 2 + Math.random(),
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="mb-3"
+                >
+                  {skill.icon}
+                </motion.div>
+                <h3 className="text-sm sm:text-base font-semibold tracking-wide">
+                  {skill.name}
+                </h3>
+              </div>
             </motion.div>
           ))}
         </motion.div>

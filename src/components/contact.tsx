@@ -8,28 +8,15 @@ const Contact = () => {
       id="contact"
       className="min-h-screen bg-[#070615f8] text-white flex flex-col items-center justify-center p-6 scroll-mt-20"
     >
-      {/* Main Container */}
+      {/* Heading outside the card */}
+      <h1 className="text-5xl font-bold mb-8 text-center">
+        <span className="bg-gradient-to-r from-[#9468fb] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+          Contact Me
+        </span>
+      </h1>
+
+      {/* Main Container / Card */}
       <div className="w-full max-w-2xl bg-[#0b0816]/70 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-fuchsia-500/40 hover:border-fuchsia-400 transition-all duration-300">
-        {/* Heading + Gmail */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-6 text-center md:text-left gap-3">
-          <h1 className="text-4xl font-bold">
-            <span className="bg-gradient-to-r from-[#9468fb] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
-              Contact Me
-            </span>
-          </h1>
-
-          {/* Gmail beside heading */}
-          <div className="flex items-center gap-2 text-fuchsia-400 text-base font-medium">
-            <Mail className="w-5 h-5" />
-            <a
-              href="mailto:maryamriaz800@gmail.com"
-              className="hover:underline hover:text-fuchsia-300 transition"
-            >
-              maryamriaz800@gmail.com
-            </a>
-          </div>
-        </div>
-
         {/* Contact Form */}
         <form className="space-y-6">
           {/* Name */}

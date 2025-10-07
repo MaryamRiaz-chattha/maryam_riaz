@@ -168,6 +168,17 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
+      {/* See More Projects Button */}
+      <div className="flex justify-center mt-10">
+        <Link
+          href="https://github.com/MaryamRiaz-chattha?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-3 font-semibold text-lg rounded-lg bg-gradient-to-r from-rose-500 to-fuchsia-500 hover:opacity-90 hover:scale-105 transition-all duration-300 text-white"
+        >
+          See More Projects
+        </Link>
+      </div>
     </section>
   );
 };
