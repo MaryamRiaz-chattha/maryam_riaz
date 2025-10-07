@@ -15,25 +15,26 @@ const projects = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
-    title: "E-Commerce Website",
-    category: "Full Stack Project",
+    title: "PromptFlow AI",
+    category: "Ai/Backend Project",
     description:
-      "An elegant and fully responsive e-commerce platform with animations, category filters, and smooth UI built using Next.js, TypeScript, and Tailwind CSS.",
-    image: "/images/ec.jpg",
+      "An AI-powered backend project that transforms text topics into detailed explanations, structured markdown summaries, and vivid image-generation prompts using LangChain and Google Gemini — designed and executed entirely in Google Colab .",
+    image: "/images/langchain.png",
     github:
-      "https://github.com/MaryamRiaz-chattha/v0-luxury-e-commerce-website",
-    demo: "https://v0-luxury-e-commerce-website-rouge.vercel.app/",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "https://github.com/MaryamRiaz-chattha/Quarter_3_PIAIC/blob/main/Project_1_langchain.ipynb",
+    demo: "#",
+    tech: ["Python", "Langchain", "Gemini", "google colab"],
   },
   {
-    title: "AI Video to Voice Generator",
+    title: "VidSpeak AI",
     category: "AI Backend Project",
     description:
-      "An AI-powered backend project that converts videos into speech using advanced machine learning models — designed without a frontend interface.",
-    image: "/images/langchain.png",
-    github: "https://github.com/MaryamRiaz-chattha/ai-video-voice-generator",
+      "AAn AI-powered backend project that analyzes video scenes to generate descriptive captions and converts personalized text into natural speech using Google GenAI and gTTS.",
+    image: "/images/audio.png",
+    github:
+      "https://github.com/MaryamRiaz-chattha/Quarter_3_PIAIC/blob/main/Assignment_5_video/Audio.ipynb",
     demo: "#",
-    tech: ["Python", "FastAPI", "Generative AI"],
+    tech: ["Python", "Google Colab", "Generative AI"],
   },
   {
     title: "E-Commerce Website",
@@ -52,8 +53,8 @@ const projects = [
     description:
       "A responsive Netflix clone designed with HTML and CSS to replicate the real platform’s layout and UI elements.",
     image: "/images/netflix.jpg",
-    github: "https://github.com/MaryamRiaz-chattha/netflix-clone",
-    demo: "https://maryam-netflix-clone.vercel.app/",
+    github: "https://github.com/MaryamRiaz-chattha/NetflixClone",
+    demo: "https://github.com/MaryamRiaz-chattha/NetflixClone",
     tech: ["HTML", "CSS"],
   },
   {
@@ -62,7 +63,8 @@ const projects = [
     description:
       "A secure voting system built using PHP, MySQL, and Bootstrap that allows users to vote and view results in real-time.",
     image: "/images/vote.png",
-    github: "https://github.com/MaryamRiaz-chattha/web-voting-system",
+    github:
+      "https://github.com/MaryamRiaz-chattha/Online_webbased_voting_system",
     demo: "#",
     tech: ["PHP", "MySQL", "Bootstrap"],
   },
@@ -70,7 +72,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="bg-[#070615f8] p-8">
+    <section id="projects" className="bg-[#070615f8] p-8 scroll-mt-24">
       <p className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
         My{" "}
         <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
@@ -166,7 +168,7 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

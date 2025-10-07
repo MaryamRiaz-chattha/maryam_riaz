@@ -1,30 +1,61 @@
+"use client";
 import React from "react";
-import { XMarkIcon } from "@heroicons/react/16/solid";
+import { X, Home, User, Code2, Briefcase, Mail } from "lucide-react";
+
 interface Props {
   nav: boolean;
   closeNav: () => void;
 }
 
-const MobileNav = ({ nav, closeNav }: Props) => {
-  const navAnimation = nav ? "translate-x-0" : "translate-x-[-100%]";
+const MobileNav: React.FC<Props> = ({ nav, closeNav }) => {
+  const navAnimation = nav ? "translate-x-0" : "-translate-x-full";
+
+  const navLinks = [
+    { name: "Home", href: "#home", icon: <Home className="w-5 h-5" /> },
+    { name: "About", href: "#about", icon: <User className="w-5 h-5" /> },
+    { name: "Skills", href: "#skills", icon: <Code2 className="w-5 h-5" /> },
+    {
+      name: "Projects",
+      href: "#projects",
+      icon: <Briefcase className="w-5 h-5" />,
+    },
+    { name: "Contact", href: "#contact", icon: <Mail className="w-5 h-5" /> },
+  ];
+
+  // Function for smooth scrolling
+  const handleScroll = (href: string) => {
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      closeNav();
+    }
+  };
+
   return (
     <div
-      className={`fixed ${navAnimation} tranform transition-all duration-300 top-0 left-0 right-0 bottom-0 z-[10000] bg-[#09101a]`}
+      className={`fixed ${navAnimation} transform transition-transform duration-500 ease-in-out top-0 left-0 w-full h-full bg-[#0b0816]/95 backdrop-blur-lg z-[1000] flex flex-col items-center justify-center space-y-8 text-white`}
     >
-      mobileNav
-      <div className="w-[100vw] h-[100vh] flex flex-col ites-center justify-center">
-        <div className="nav-link ">Home</div>
-        <div className="nav-link-mobile">Services</div>
-        <div className="nav-link-mobile">About</div>
-        <div className="nav-link-mobile">Project</div>
-        <div className="nav-link-mobile">Contact </div>
-      </div>
-      <div
+      {/* Close Button */}
+      <button
         onClick={closeNav}
-        className="absolute cursor-pointer top-[2rem] right-[2rem] w-[2rem] h-[2rem]  text-pink-950"
+        className="absolute top-6 right-6 text-fuchsia-400 hover:text-fuchsia-300 transition"
       >
-        <XMarkIcon />
-      </div>
+        <X className="w-7 h-7" />
+      </button>
+
+      {/* Navigation Links */}
+      {navLinks.map((link) => (
+        <button
+          key={link.name}
+          onClick={() => handleScroll(link.href)}
+          className="flex items-center gap-3 text-xl font-semibold hover:text-fuchsia-400 transition group"
+        >
+          <span className="group-hover:translate-x-1 transition-transform">
+            {link.icon}
+          </span>
+          <span>{link.name}</span>
+        </button>
+      ))}
     </div>
   );
 };

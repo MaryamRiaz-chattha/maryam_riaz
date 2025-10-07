@@ -8,11 +8,15 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="bg-[#070615f8] bg-center bg-cover relative">
+    // ✅ only ONE main container with id="home"
+    <div
+      id="home"
+      className="relative bg-[#070615f8] bg-center bg-cover pt-[12vh]"
+    >
       <Particle />
 
       <div className="w-[90%] lg:w-[80%] mx-auto h-full flex flex-col-reverse lg:flex-row items-center justify-center gap-10 py-16">
-        {/* Text Section */}
+        {/* ✅ Text Section */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -32,7 +36,7 @@ const Hero = () => {
             <TextEffect />
           </div>
 
-          {/* Description (Simplified White Text) */}
+          {/* Description */}
           <p className="mt-4 text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-white max-w-[600px] mx-auto lg:mx-0 leading-relaxed">
             Welcome to my portfolio! I’m{" "}
             <span className="font-semibold">Maryam Riaz</span>, a passionate
@@ -58,7 +62,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Image Section */}
+        {/* ✅ Image Section */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}

@@ -26,7 +26,7 @@ export default function Footer() {
     skills:
       "Maryam’s skills include TypeScript, Next.js, Tailwind CSS, Python, FastAPI, ShadCN UI, Git, and Prompt Engineering.",
     projects:
-      "She has built projects like a Portfolio Website, Netflix Clone, 3D Login Form, School Finder Chatbot, and an AI PDF Reader.",
+      "She has built projects like a Portfolio Website,E commerace website, Netflix Clone, 3D Login Form, School Finder Chatbot, and an AI PDF Reader.",
     goals:
       "Maryam’s goal is to become an advanced AI Engineer and create impactful web applications blending creativity and intelligence.",
     contact: "You can connect with Maryam on LinkedIn or GitHub! 💼",

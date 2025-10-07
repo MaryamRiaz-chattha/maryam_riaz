@@ -82,3 +82,6 @@
 .animate-slideDown {
   animation: slideDown 3s linear infinite;
 }
+html {
+  scroll-behavior: smooth;
+}

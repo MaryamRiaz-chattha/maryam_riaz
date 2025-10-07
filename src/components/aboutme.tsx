@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Users, Cpu, Rocket } from "lucide-react"; // ✅ Updated icons
+import { Users, Cpu, Rocket } from "lucide-react"; // ✅ Icons from lucide-react
 
 const AboutMe = [
   {
@@ -27,7 +27,7 @@ const AboutMe = [
   },
 ];
 
-export default function Skills() {
+export default function About() {
   const [visible, setVisible] = useState<number[]>([]);
 
   useEffect(() => {
@@ -50,8 +50,8 @@ export default function Skills() {
 
   return (
     <section
-      id="skills"
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden "
+      id="about"
+      className="scroll-mt-[12vh] py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden "
     >
       {/* Background Glows */}
       <div className="absolute inset-0 opacity-20">
@@ -68,7 +68,7 @@ export default function Skills() {
             Me
           </span>
         </h2>
-        <p className="text-white max-w-2xl mx-auto  sm:text-[18px] leading-relaxed">
+        <p className="text-white max-w-2xl mx-auto sm:text-[18px] leading-relaxed">
           I believe in meaningful creation — combining technology, teamwork, and
           innovation to build solutions that inspire and perform. My mindset
           focuses on collaboration, creativity, and continuous improvement in
@@ -76,7 +76,7 @@ export default function Skills() {
         </p>
       </div>
 
-      {/* Why Me Cards */}
+      {/* Cards Section */}
       <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-3 gap-8">
         {AboutMe.map((skill, index) => {
           const Icon = skill.icon;
