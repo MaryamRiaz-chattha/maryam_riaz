@@ -55,7 +55,7 @@ export default function EducationSection() {
   return (
     <section
       id="education"
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden relative"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden "
     >
       {/* Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
