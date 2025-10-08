@@ -1,27 +1,27 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Users, Cpu, Rocket } from "lucide-react"; // ✅ Icons from lucide-react
+import { Users, Cpu, Rocket } from "lucide-react";
 
 const AboutMe = [
   {
     id: 1,
     title: "Collaborative & Innovative Thinker",
-    icon: Users, // 🤝 teamwork & collaboration
+    icon: Users,
     description:
       "I thrive in collaborative environments where creativity meets technology. Working with diverse teams helps me design innovative, human-centered solutions that create lasting impact.",
   },
   {
     id: 2,
     title: "Technical Proficiency & Adaptability",
-    icon: Cpu, // 💻 symbolizes technical skill & logic
+    icon: Cpu,
     description:
       "With expertise in Next.js, TypeScript, Tailwind CSS, and AI tools, I adapt quickly to new frameworks while maintaining clean, efficient, and scalable code for modern web projects.",
   },
   {
     id: 3,
     title: "Leadership & Growth Mindset",
-    icon: Rocket, // 🚀 symbolizes ambition, leadership, growth
+    icon: Rocket,
     description:
       "I lead with empathy and determination, always eager to learn and improve. My focus on teamwork, consistency, and innovation drives successful outcomes in every challenge.",
   },
@@ -51,10 +51,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-[12vh] py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden "
+      className="scroll-mt-[12vh] py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden relative"
     >
       {/* Background Glows */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-[#8B5CF6]/30 via-[#EC4899]/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-radial from-[#06B6D4]/30 via-[#8B5CF6]/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute top-1/2 left-1/2 w-72 h-72 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-[#EC4899]/20 via-[#06B6D4]/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
@@ -62,13 +62,13 @@ export default function About() {
 
       {/* Section Header */}
       <div className="max-w-5xl mx-auto relative z-10 text-center mb-10">
-        <h2 className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
+        <h2 className="text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
           WHY{" "}
           <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9a06d4] bg-clip-text text-transparent">
             ME
           </span>
         </h2>
-        <p className="text-white max-w-2xl mx-auto sm:text-[18px] leading-relaxed">
+        <p className="text-white max-w-2xl mx-auto sm:text-[18px] leading-relaxed mt-4">
           I believe in meaningful creation — combining technology, teamwork, and
           innovation to build solutions that inspire and perform. My mindset
           focuses on collaboration, creativity, and continuous improvement in
@@ -77,7 +77,7 @@ export default function About() {
       </div>
 
       {/* Cards Section */}
-      <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto relative z-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {AboutMe.map((skill, index) => {
           const Icon = skill.icon;
           const isVisible = visible.includes(skill.id);

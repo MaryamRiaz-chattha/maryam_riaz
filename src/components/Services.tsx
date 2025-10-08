@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -90,14 +91,14 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="bg-[#070615f8] py-28 px-6 overflow-hidden scroll-mt-24 "
+      className="bg-[#070615f8] pt-16 sm:pt-20 md:pt-28 pb-16 px-6 overflow-hidden scroll-mt-24"
     >
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-[34px] sm:text-[45px] md:text-[55px] font-extrabold uppercase tracking-wide text-white mb-16"
+          className="text-[34px] sm:text-[45px] md:text-[55px] font-extrabold uppercase tracking-wide text-white mb-12"
         >
           My{" "}
           <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
@@ -123,9 +124,9 @@ const Skills = () => {
                 boxShadow: "0 0 30px rgba(236,72,153,0.6)",
               }}
               whileTap={{ scale: 0.96 }}
-              className="relative w-[160px] h-[160px] flex flex-col items-center justify-center text-white rounded-2xl shadow-lg transition-all duration-500"
+              className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] flex flex-col items-center justify-center text-white rounded-2xl shadow-lg transition-all duration-500"
             >
-              {/* Magic Bento Background */}
+              {/* Animated Background */}
               <motion.div
                 className="absolute inset-0 rounded-2xl"
                 animate={{
@@ -144,7 +145,7 @@ const Skills = () => {
               />
 
               {/* Card Foreground */}
-              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-6 bg-[#0f172a]/70 backdrop-blur-2xl border border-[#8B5CF6]/40 rounded-2xl">
+              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-4 sm:p-6 bg-[#0f172a]/70 backdrop-blur-2xl border border-[#8B5CF6]/40 rounded-2xl">
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{
@@ -152,11 +153,11 @@ const Skills = () => {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="mb-3"
+                  className="mb-2 sm:mb-3"
                 >
                   {skill.icon}
                 </motion.div>
-                <h3 className="text-sm sm:text-base font-semibold tracking-wide">
+                <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-center">
                   {skill.name}
                 </h3>
               </div>

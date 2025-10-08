@@ -55,10 +55,10 @@ export default function EducationSection() {
   return (
     <section
       id="education"
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden relative"
     >
       {/* Background Glows */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-[600px] h-[600px] bg-gradient-radial from-[#8B5CF6]/30 via-[#EC4899]/15 to-transparent rounded-full blur-[100px] animate-pulse-slow"></div>
         <div
           className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-radial from-[#06B6D4]/25 via-[#8B5CF6]/15 to-transparent rounded-full blur-[80px] animate-pulse-slow"
@@ -81,26 +81,32 @@ export default function EducationSection() {
       </div>
 
       {/* Mobile Timeline */}
-      <div className="lg:hidden space-y-6">
-        {education.map((step, index) => {
-          const Icon = step.icon;
-          const visible = visibleSteps.includes(step.id);
-          return (
-            <div
-              key={step.id}
-              data-step={step.id}
-              className={`${
-                visible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              } transition-all duration-700 ease-out`}
-              style={{ transitionDelay: `${index * 200}ms` }}
-            >
-              <div className="bg-black/30 backdrop-blur-md border border-[#8B5CF6]/30 rounded-lg p-5 hover:bg-black/50 hover:border-[#EC4899]/50 hover:shadow-xl hover:shadow-[#EC4899]/30 transition-all duration-300 flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] p-2 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50">
+      <div className="lg:hidden relative max-w-md mx-auto">
+        {/* Vertical Line */}
+        <div className="absolute left-6 top-0 w-1 h-full bg-white/20 rounded-full"></div>
+
+        <div className="space-y-6">
+          {education.map((step, index) => {
+            const Icon = step.icon;
+            const visible = visibleSteps.includes(step.id);
+            return (
+              <div
+                key={step.id}
+                data-step={step.id}
+                className={`relative flex items-start ${
+                  visible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                } transition-all duration-700 ease-out`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                {/* Icon */}
+                <div className="z-10 flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
-                <div>
+
+                {/* Content */}
+                <div className="ml-6 bg-black/30 backdrop-blur-md border border-[#8B5CF6]/30 rounded-lg p-5 hover:bg-black/50 hover:border-[#EC4899]/50 hover:shadow-xl hover:shadow-[#EC4899]/30 transition-all duration-300 flex-1">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="text-white font-semibold">{step.title}</h3>
                     <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] px-2 py-1 rounded-full">
@@ -110,14 +116,16 @@ export default function EducationSection() {
                   <p className="text-white/70 text-sm">{step.description}</p>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
       {/* Desktop Timeline */}
       <div className="hidden lg:block relative max-w-6xl mx-auto">
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#fcfaff] h-full rounded-full shadow-lg shadow-[#06B6D4]/50"></div>
+        {/* Vertical Center Line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-white/20 h-full rounded-full shadow-lg shadow-[#06B6D4]/50"></div>
+
         <div className="space-y-16">
           {education.map((step, index) => {
             const Icon = step.icon;
@@ -153,6 +161,8 @@ export default function EducationSection() {
                     </p>
                   </div>
                 </div>
+
+                {/* Icon in center */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
                   <div className="relative group">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] p-2 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50 group-hover:shadow-[#EC4899]/70 transition-all duration-300">
