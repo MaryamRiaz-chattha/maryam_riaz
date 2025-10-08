@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { X, Home, User, Code2, Briefcase, Mail } from "lucide-react";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 
 interface Props {
   nav: boolean;
@@ -10,53 +10,64 @@ interface Props {
 const MobileNav: React.FC<Props> = ({ nav, closeNav }) => {
   const navAnimation = nav ? "translate-x-0" : "-translate-x-full";
 
-  const navLinks = [
-    { name: "Home", href: "#home", icon: <Home className="w-5 h-5" /> },
-    { name: "About", href: "#about", icon: <User className="w-5 h-5" /> },
-    { name: "Skills", href: "#skills", icon: <Code2 className="w-5 h-5" /> },
-    {
-      name: "Projects",
-      href: "#projects",
-      icon: <Briefcase className="w-5 h-5" />,
-    },
-    { name: "Contact", href: "#contact", icon: <Mail className="w-5 h-5" /> },
-  ];
-
-  // Function for smooth scrolling
-  const handleScroll = (href: string) => {
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      closeNav();
-    }
-  };
-
   return (
-    <div
-      className={`fixed ${navAnimation} transform transition-transform duration-500 ease-in-out top-0 left-0 w-full h-full bg-[#0b0816]/95 backdrop-blur-lg z-[1000] flex flex-col items-center justify-center space-y-8 text-white`}
-    >
-      {/* Close Button */}
-      <button
-        onClick={closeNav}
-        className="absolute top-6 right-6 text-fuchsia-400 hover:text-fuchsia-300 transition"
-      >
-        <X className="w-7 h-7" />
-      </button>
+    <>
+      {/* Backdrop */}
+      {nav && (
+        <div
+          onClick={closeNav}
+          className="fixed inset-0 bg-black/50 z-[9990] backdrop-blur-sm"
+        />
+      )}
 
-      {/* Navigation Links */}
-      {navLinks.map((link) => (
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 left-0 h-full w-4/5 max-w-xs bg-[#09101a] z-[10000] transform ${navAnimation} transition-transform duration-300`}
+      >
+        {/* Close Button */}
         <button
-          key={link.name}
-          onClick={() => handleScroll(link.href)}
-          className="flex items-center gap-3 text-xl font-semibold hover:text-fuchsia-400 transition group"
+          onClick={closeNav}
+          className="absolute top-6 right-6 w-10 h-10 text-pink-700 hover:text-pink-500 transition-colors"
+          aria-label="Close mobile menu"
         >
-          <span className="group-hover:translate-x-1 transition-transform">
-            {link.icon}
-          </span>
-          <span>{link.name}</span>
+          <XMarkIcon className="w-full h-full" />
         </button>
-      ))}
-    </div>
+
+        {/* Menu Links */}
+        <div className="flex flex-col items-center justify-center h-full mt-12 space-y-6">
+          <a
+            href="#home"
+            className="text-white text-2xl hover:text-fuchsia-400 transition-colors"
+          >
+            Home
+          </a>
+          <a
+            href="#services"
+            className="text-white text-2xl hover:text-fuchsia-400 transition-colors"
+          >
+            Services
+          </a>
+          <a
+            href="#about"
+            className="text-white text-2xl hover:text-fuchsia-400 transition-colors"
+          >
+            About
+          </a>
+          <a
+            href="#projects"
+            className="text-white text-2xl hover:text-fuchsia-400 transition-colors"
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            className="text-white text-2xl hover:text-fuchsia-400 transition-colors"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+    </>
   );
 };
 
