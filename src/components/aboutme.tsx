@@ -51,7 +51,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-[12vh] py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden relative"
+      className="scroll-mt-[12vh] py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden "
     >
       {/* Background Glows */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
